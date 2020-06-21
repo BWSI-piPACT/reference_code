@@ -1,10 +1,10 @@
 # piPACT Raspberry Pi Setup
-This document explains how to setup a Raspberry Pi, specifically its OS and system settings, for piPACT. The overall OS and system settings that are implemented by these instructions are captured in the [preconfigured OS image](). There are steps that will need to be done in any case and are highlighted appropriately. You will need to repeat this for each Raspberry Pi being set up.
+This document explains how to setup a Raspberry Pi, specifically its OS and system settings, for piPACT. The overall OS and system settings that are implemented by these instructions are captured in the [preconfigured OS image](https://drive.google.com/file/d/1HNnyF63N6r_fmepIvHKHla1A_UYT0AoL/view?usp=sharing). There are steps that will need to be done in any case and are highlighted appropriately. You will need to repeat this for each Raspberry Pi being set up.
 
 For those interested in headless (without a monitor) Raspberry Pi setup, the information found [here](https://www.raspberrypi.org/documentation/configuration/wireless/headless.md) may be useful.
 
 ## Preconfigured Setup
-This section addresses how to use the [preconfigured OS image]() to setup your Raspberry Pi.
+This section addresses how to use the [preconfigured OS image](https://drive.google.com/file/d/1HNnyF63N6r_fmepIvHKHla1A_UYT0AoL/view?usp=sharing) to setup your Raspberry Pi.
 
 ### Requirements
 - A computer with
@@ -16,7 +16,7 @@ This section addresses how to use the [preconfigured OS image]() to setup your R
 - Mouse
 
 ### Deploying Preconfigured OS Image
-1. Download the [preconfigured OS image]() onto your computer.
+1. Download the [preconfigured OS image](https://drive.google.com/file/d/1HNnyF63N6r_fmepIvHKHla1A_UYT0AoL/view?usp=sharing) onto your computer.
 2. Flash the image onto the microSD card using your imaging software. It's suggested you "validate" your image if your software provides such an option.
 
 ### Booting up Raspberry Pi
