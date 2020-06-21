@@ -35,10 +35,10 @@ This section addresses how to use the [preconfigured OS image]() to setup your R
    Be sure to assign **unique** `<STATIC_IP>` amongst all the devices on your wireless network including other Raspberry Pis that you set up with static IPs.
    ```
    # piPACT wireless static IP configuration template
-   # interface wlan0
-   # static ip_address=<STATIC_IP>/24
-   # static routers=<ROUTER_IP>
-   # static domain_name_server=<DNS_IP>
+   interface wlan0
+   static ip_address=<STATIC_IP>/24
+   static routers=<ROUTER_IP>
+   static domain_name_server=<DNS_IP>
    ```
 3. If you didn't do so in the previous step, reboot your Pi for the wireless setting to take effect.
 
@@ -83,15 +83,15 @@ These instructions are for those wanting to configure and deploy their Raspberry
    ```
    
 ### Static IP Setup
-1. Follow these [instructions](https://pimylifeup.com/raspberry-pi-static-ip-address/) to assign a static IP to your Raspberry Pi. We have prepopulated the `dhcpcd.conf` file with a commented out template of the static IP wireless configuration. You can either update this template and uncomment it or write your own according to the linked to instructions.
+1. Follow these [instructions](https://pimylifeup.com/raspberry-pi-static-ip-address/) to assign a static IP to your Raspberry Pi. Shown below is the structure of the additions/modifications to the `dhcpcd.conf` file.
    
    Be sure to assign **unique** `<STATIC_IP>` amongst all the devices on your wireless network including other Raspberry Pis that you set up with static IPs.
    ```
    # piPACT wireless static IP configuration template
-   # interface wlan0
-   # static ip_address=<STATIC_IP>/24
-   # static routers=<ROUTER_IP>
-   # static domain_name_server=<DNS_IP>
+   interface wlan0
+   static ip_address=<STATIC_IP>/24
+   static routers=<ROUTER_IP>
+   static domain_name_server=<DNS_IP>
    ```
 2. If you didn't do so in the previous step, reboot your Pi for the wireless setting to take effect.
 
