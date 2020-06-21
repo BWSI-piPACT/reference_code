@@ -18,8 +18,7 @@ scanner:
   revisit: 1 # Interval at which to scan (s)
   filters: # Filters
     ADDRESS:
-      - 'DC:A6:32:10:75:4D'
-    RSSI: [-51, 0]
+    RSSI:
     
 # Logger configuration
 logger:

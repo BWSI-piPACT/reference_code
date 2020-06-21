@@ -587,7 +587,7 @@ class Scanner(object):
         # Process, filter, and output received scans
         advertisements = self.process_scans(scans, timestamps)
         advertisements = self.filter_advertisements(advertisements)
-        advertisements.to_csv(scan_file)
+        advertisements.to_csv(scan_file, index_label='SCAN')
         return advertisements
     
 def setup_logger(config):
@@ -616,7 +616,7 @@ def load_config(parsed_args):
     # Load default configuration if none specified
     if parsed_args['config_yml'] is None:
         config = DEFAULT_CONFIG
-    # Merge configuration YAML values with command line options
+    # Load configuration YAML
     else:
         with open(parsed_args['config_yml'], 'r') as f:
             config = yaml.load(f, Loader=yaml.SafeLoader)
@@ -624,12 +624,13 @@ def load_config(parsed_args):
                 **config['advertiser']}
         config['scanner'] = {**DEFAULT_CONFIG['scanner'], 
                 **config['scanner']}
-        for key, value in parsed_args.items():
-            if value is not None:
-                if key in config['advertiser']:
-                    config['advertiser'][key] = value
-                if key in config['scanner']:
-                    config['scanner'][key] = value
+    # Merge configuration values with command line options
+    for key, value in parsed_args.items():
+        if value is not None:
+            if key in config['advertiser']:
+                config['advertiser'][key] = value
+            if key in config['scanner']:
+                config['scanner'][key] = value
     # Remove malformed filters
     if config['scanner']['filters'] is not None:
         filters_to_remove = []
