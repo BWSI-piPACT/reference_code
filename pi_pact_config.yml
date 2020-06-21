@@ -1,0 +1,51 @@
+# Configuration file for piPACT reference collection software
+
+# Settings for iBeacon advertisment
+advertiser:
+  control_file: 'advertiser_control' # Control file which stops beacon advertisement before timeout
+  timeout: 20 # Advertisement timeout (s)
+  uuid: '' # UUID, major, and minor values to advertise
+  major: 1
+  minor: 1 
+  tx_power: 1 # Tx power at which to advertise
+  interval: 200 # Interval at which advertise (ms)
+
+# Settings for beacon scanner
+scanner:
+  control_file: 'scanner_control' # Control file which stops beacon scanner before timeout
+  scan_prefix: 'pi_pact_scan' # Prefix to attach to scan output files
+  timeout: 20 # Scanning timeout (s)
+  revisit: 1 # Interval at which to scan (s)
+  filters: # Filters
+    ADDRESS:
+      - 'DC:A6:32:10:75:4D'
+    RSSI: [-51, 0]
+    
+# Logger configuration
+logger:
+  name: &name 'pi_pact.log'
+  config:
+    version: 1
+    formatters:
+      full:
+        format: '%(asctime)s   %(module)-10s   %(levelname)-8s   %(message)s'
+      brief:
+        format: '%(asctime)s   %(levelname)-8s   %(message)s'
+    handlers:
+      console:
+        class: 'logging.StreamHandler'
+        level: 'INFO'
+        formatter: 'brief'
+      file:
+        class: 'logging.handlers.TimedRotatingFileHandler'
+        level: 'DEBUG'
+        formatter: 'full'
+        filename: *name
+        when: 'H'
+        interval: 1
+    loggers:
+      *name:
+        level: 'DEBUG' # Effective logging level
+        handlers:
+          - 'console'
+          - 'file'
