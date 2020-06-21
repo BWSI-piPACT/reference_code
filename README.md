@@ -59,7 +59,9 @@ optional arguments:
 ```
 
 ## Configuration
-The configuration file is of the YAML format. It is provided with a default configuration which you should change to suit your needs. You will need to reference in-line comments and external module documentation to fully understand all configuration options. Many configuration options can be overwritten by command line provided arguments.
+The configuration file is of the YAML format. It is provided with a default configuration which you should change to suit your needs. You will need to reference in-line comments and external module documentation to fully understand all configuration options. 
+
+The configuration YAML will only be used if specified as a commadn line argument. Many indiviudal configuration options can be overwritten by command line provided arguments.
 
 ```yaml
 # Configuration file for piPACT reference collection software
@@ -122,7 +124,7 @@ In this mode, the advertiser will run infinitely until a user commanded stop is 
 
 1. Start the advertiser. The addition of the `&` flag causes the command to be executed in the background. This allows the user to retain control of the command line which makes commanding the advertiser to stop much easier.
    ```console
-   pi@raspberrypi:~ $ sudo python3 pi_pact.py -a &
+   pi@raspberrypi:~ $ sudo python3 pi_pact.py -a --config pi_pact_config.yml &
    [1] 2083
    ``` 
 2. Observe the informational log messages.
@@ -142,7 +144,7 @@ In this mode, the advertiser will run either until the specified timeout or unti
 
 1. Start the advertiser. The addition of the `&` flag causes the command to be executed in the background. This allows the user to retain control of the command line which makes commanding the advertiser to stop much easier.
    ```console
-   pi@raspberrypi:~ $ sudo python3 pi_pact.py -a --timeout 20 &
+   pi@raspberrypi:~ $ sudo python3 pi_pact.py -a --config pi_pact_config.yml --timeout 20 &
    [1] 2282
    ``` 
 2. Observe the informational log messages.
@@ -169,7 +171,7 @@ In this mode, the scanner will run infinitely until a user commanded stop is spe
 
 1. Start the scanner. The addition of the `&` flag causes the command to be executed in the background. This allows the user to retain control of the command line which makes commanding the scanner to stop much easier.
    ```console
-   pi@raspberrypi:~ $ sudo python3 pi_pact.py -s &
+   pi@raspberrypi:~ $ sudo python3 pi_pact.py -s --config pi_pact_config.yml &
    [1] 2083
    ``` 
 2. Observe the informational log messages.
@@ -189,7 +191,7 @@ In this mode, the scanner will run either until the specified timeout or until a
 
 1. Start the scanner. The addition of the `&` flag causes the command to be executed in the background. This allows the user to retain control of the command line which makes commanding the scanner to stop much easier.
    ```console
-   pi@raspberrypi:~ $ sudo python3 pi_pact.py -s --timeout 20 &
+   pi@raspberrypi:~ $ sudo python3 pi_pact.py -s --config pi_pact_config.yml --timeout 20 &
    [1] 2282
    ``` 
 2. Observe the informational log messages.
