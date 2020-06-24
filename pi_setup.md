@@ -28,9 +28,24 @@ This section addresses how to use the [preconfigured OS image](https://drive.goo
 1. Follow these [instructions](https://www.maketecheasier.com/change-raspberry-pi-password/) to create a new username and password.
 2. It is recommended you disable the default `pi` account in order to secure your Raspberry Pi.
 
-### Update Wireless Settings
+### Connect to WiFi
 1. Follow these [instructions](https://www.raspberrypi.org/documentation/configuration/wireless/desktop.md) to connect your Raspberry Pi to your wireless network of choice. Be sure it is one you trust.
-2. Follow these [instructions](https://pimylifeup.com/raspberry-pi-static-ip-address/) to assign a static IP to your Raspberry Pi. We have prepopulated the `dhcpcd.conf` file with a commented out template of the static IP wireless configuration. You can either update this template and uncomment it or write your own according to the linked to instructions.
+
+### Get piPACT Reference Code
+1. [Clone](https://www.git-scm.com/docs/git-clone) the [piPACT reference code](https://github.com/BWSI-piPACT/reference_code).
+2. Test the code by attempting to import it in Python.
+   ```console
+   pi@raspberrypi:~ $ python3
+   Python 3.7.3 (default, Dec 20 2019, 18:57:59) 
+   [GCC 8.3.0] on linux
+   Type "help", "copyright", "credits" or "license" for more information.
+   >>> import pi_pact
+   >>> exit()
+   pi@raspberrypi:~ $ 
+   ```
+
+### Update Wireless Settings
+1. Follow these [instructions](https://pimylifeup.com/raspberry-pi-static-ip-address/) to assign a static IP to your Raspberry Pi. We have prepopulated the `dhcpcd.conf` file with a commented out template of the static IP wireless configuration. You can either update this template and uncomment it or write your own according to the linked to instructions.
    
    Be sure to assign **unique** `<STATIC_IP>` amongst all the devices on your wireless network including other Raspberry Pis that you set up with static IPs.
    ```
@@ -40,7 +55,7 @@ This section addresses how to use the [preconfigured OS image](https://drive.goo
    static routers=<ROUTER_IP>
    static domain_name_server=<DNS_IP>
    ```
-3. If you didn't do so in the previous step, reboot your Pi for the wireless setting to take effect.
+2. If you didn't do so in the previous step, reboot your Pi for the wireless setting to take effect.
 
 ### Testing Wireless Access
 1. From a computer with SSH capability and using the static IP you assigned previously, perform step 4 of these [instructions](https://www.raspberrypi.org/documentation/remote-access/ssh/).
