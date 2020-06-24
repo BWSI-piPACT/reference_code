@@ -14,9 +14,13 @@ Stated versions are tested and validated. Newer or older versions are not guaran
 # Installation
 1. Install the requirement.
 2. Clone the repository.
-3. Test the repository by attempting to import the piPACT reference code without error.
+3. Navigate into the `reference_code` folder that was created.
    ```console
-   pi@raspberrypi:~ $ python3
+   pi@raspberrypi:~ $ cd reference_code
+   ```
+4. Test the repository by attempting to import the piPACT reference code without error.
+   ```console
+   pi@raspberrypi:~/reference_code $ python3
    Python 3.7.3 (default, Dec 20 2019, 18:57:59) 
    [GCC 8.3.0] on linux
    Type "help", "copyright", "credits" or "license" for more information.
