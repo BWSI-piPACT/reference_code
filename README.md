@@ -124,7 +124,7 @@ In this mode, the advertiser will run infinitely until a user commanded stop is 
 
 1. Start the advertiser. The addition of the `&` flag causes the command to be executed in the background. This allows the user to retain control of the command line which makes commanding the advertiser to stop much easier.
    ```console
-   pi@raspberrypi:~ $ sudo python3 pi_pact.py -a --config pi_pact_config.yml &
+   pi@raspberrypi:~ $ sudo python3 pi_pact.py -a --config_yml pi_pact_config.yml &
    [1] 2083
    ``` 
 2. Observe the informational log messages.
@@ -144,7 +144,7 @@ In this mode, the advertiser will run either until the specified timeout or unti
 
 1. Start the advertiser. The addition of the `&` flag causes the command to be executed in the background. This allows the user to retain control of the command line which makes commanding the advertiser to stop much easier.
    ```console
-   pi@raspberrypi:~ $ sudo python3 pi_pact.py -a --config pi_pact_config.yml --timeout 20 &
+   pi@raspberrypi:~ $ sudo python3 pi_pact.py -a --config_yml pi_pact_config.yml --timeout 20 &
    [1] 2282
    ``` 
 2. Observe the informational log messages.
