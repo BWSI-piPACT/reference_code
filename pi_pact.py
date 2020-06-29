@@ -637,6 +637,8 @@ def load_config(parsed_args):
         for key, value in config['scanner']['filters'].items():
             if key not in ALLOWABLE_FILTERS:
                 filters_to_remove.append(key)
+            elif value is None:
+                filters_to_remove.append(key)
             elif key in MEASUREMENT_FILTERS and len(value) != 2:
                 filters_to_remove.append(key)
         for filter_to_remove in filters_to_remove:
