@@ -488,7 +488,7 @@ class Scanner(object):
         for key, value in self.filters.items():
             # Filter based on fixed identifiers
             if key in ID_FILTERS:
-                advertisements = advertisements[advertisements[key].isin(value)]
+                advertisements = advertisements[advertisements[key].isin([value])]
             # Filter based on measurements
             else:
                 query_str = f"{value[0]} <= {key} and {key} <= {value[1]}"
@@ -635,7 +635,7 @@ def load_config(parsed_args):
     if config['scanner']['filters'] is not None:
         filters_to_remove = []
         for key, value in config['scanner']['filters'].items():
-            if key not in ALLOWABLE_FILTERS or not isinstance(value, list):
+            if key not in ALLOWABLE_FILTERS:
                 filters_to_remove.append(key)
             elif key in MEASUREMENT_FILTERS and len(value) != 2:
                 filters_to_remove.append(key)
