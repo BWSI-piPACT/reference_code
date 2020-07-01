@@ -678,7 +678,7 @@ def parse_args(args):
             help="Beacon advertiser TX power.")
     parser.add_argument('--interval', type=int,
             help="Beacon advertiser interval (ms).")
-    parser.add_argument('--revist', type=int, 
+    parser.add_argument('--revisit', type=int, 
             help="Beacon scanner revisit interval (s)")
     return vars(parser.parse_args(args))
     
